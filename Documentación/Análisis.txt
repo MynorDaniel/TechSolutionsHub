@@ -1,0 +1,18 @@
+Análisis - Proyecto 1 IPC2 PS2025
+
+Empresa: La Computadora Feliz
+
+Entidades:
+
+Componente
+Computadora
+Usuario
+Ensamble
+Venta
+
+Roles:
+
+Encargado de Ensamblaje
+Encargado de Ventas
+Administrador
+
