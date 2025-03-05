@@ -6,12 +6,19 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Página de Inicio</title>
+        <jsp:include page="/includes/resources.jsp"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
-        <h1>zzz!</h1>
+    <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+        <div class="text-center p-5 bg-white shadow rounded">
+            <h1 class="mb-4">Bienvenido a la Aplicación</h1>
+            <p class="mb-4">Por favor, inicia sesión para continuar.</p>
+            <a href="usuario/login.jsp" class="btn btn-primary btn-lg">Iniciar Sesión</a>
+        </div>
     </body>
 </html>
+

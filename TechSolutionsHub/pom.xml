@@ -13,12 +13,31 @@
     </properties>
     
     <dependencies>
+        
+        <!-- Jakarta -->
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- Conector MySQL -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        
+        <!-- Pool de conexiones -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>10.1.28</version>
+            <type>jar</type>
+        </dependency>
+        
     </dependencies>
     
     <build>
