@@ -12,7 +12,7 @@ Venta
 
 Roles:
 
-Encargado de Ensamblaje
-Encargado de Ventas
+Ensamblador
+Vendedor
 Administrador
 

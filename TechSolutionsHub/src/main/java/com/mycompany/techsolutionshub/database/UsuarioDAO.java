@@ -36,5 +36,24 @@ public class UsuarioDAO {
         }
         return false;
     }
-    
+
+    public String obtenerRol(String nombre) {
+        String sql = "SELECT rol FROM usuario WHERE nombre = ?";
+
+        try (Connection connection = ConexionDB.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setString(1, nombre);
+
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                return rs.getString("rol");
+            }
+
+        } catch (SQLException e) {
+            return "";
+        }
+        return "";
+    }
+
 }

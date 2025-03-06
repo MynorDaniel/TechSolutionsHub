@@ -28,15 +28,22 @@ public class LoginController {
         
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         boolean logueado = usuarioDAO.loguearUsuario(usuario);
+        String rol = usuarioDAO.obtenerRol(nombre);
         
-        // Crear sesion
-        // Devolver vista
-        
-        if(logueado){
+        if(logueado && rol.length() > 0){
+          
+            // Crear sesion  
+            
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("nombreAtributoSesion", nombre);
+            sesion.setAttribute("rolAtributoSesion", rol);
+
+            // Devolver vista
+
             request.getRequestDispatcher("/usuario/home.jsp").forward(request, response);
+            
         }else{
             request.getRequestDispatcher("/usuario/login.jsp").forward(request, response);
         }
     }
-    
 }
