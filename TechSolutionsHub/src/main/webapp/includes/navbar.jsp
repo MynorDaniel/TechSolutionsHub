@@ -1,6 +1,6 @@
 <%-- Verificar el rol y hacer el include correspondiente --%>
 <%
-    HttpSession sesion = request.getSession();
+    HttpSession sesion = request.getSession(false);
     String rolUsuario = (String) sesion.getAttribute("rolAtributoSesion");
 
     if ("Administrador".equals(rolUsuario)) {

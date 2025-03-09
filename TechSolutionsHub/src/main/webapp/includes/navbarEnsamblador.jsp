@@ -10,6 +10,11 @@
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/ensamblador/componentes.jsp"><i class="bi bi-box-seam"></i> Componentes</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/ensamblador/moldes.jsp"><i class="bi bi-cpu"></i> Moldes</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/ensamblador/computadoras.jsp"><i class="bi bi-pc"></i> Computadoras</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/LoginServlet">
+                            <i class="bi bi-box-arrow-right"></i> Salir
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

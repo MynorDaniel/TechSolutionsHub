@@ -11,7 +11,14 @@
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/computadoras.jsp"><i class="bi bi-pc"></i> Computadoras</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/reportes.jsp"><i class="bi bi-bar-chart"></i> Reportes</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/carga-datos.jsp"><i class="bi bi-cloud-upload"></i> Carga de Datos</a></li>
+                    <!-- Boton Logout -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/LoginServlet">
+                            <i class="bi bi-box-arrow-right"></i> Salir
+                        </a>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>

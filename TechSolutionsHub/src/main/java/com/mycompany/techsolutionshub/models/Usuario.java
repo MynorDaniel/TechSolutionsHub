@@ -26,6 +26,9 @@ public class Usuario {
         this.nombre = nombre;
         this.clave = clave;
     }
+
+    public Usuario() {
+    }
     
     public String getNombre() {
         return nombre;

@@ -14,6 +14,20 @@
     </head>
     <body>
         <jsp:include page="/includes/navbarAdministrador.jsp"/>
-        <h1>Usuarios</h1>
+        
+        <div class="container mt-4">
+
+            <!-- Menú -->
+            <div class="list-group">
+                <!-- Formulario para hacer un GET al servlet UsuarioServlet -->
+                <form action="${pageContext.request.contextPath}/UsuarioServlet" method="get" class="d-inline">
+                    <button type="submit" class="list-group-item list-group-item-action">Ver Usuarios</button>
+                </form>
+                
+                <!-- Enlace para ir a crearUsuario.jsp -->
+                <a href="crearUsuario.jsp" class="list-group-item list-group-item-action">Crear Usuario</a>
+            </div>
+        </div>
+        
     </body>
 </html>
