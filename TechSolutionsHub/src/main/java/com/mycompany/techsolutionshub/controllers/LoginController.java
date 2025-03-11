@@ -29,7 +29,7 @@ public class LoginController {
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         boolean logueado = usuarioDAO.loguearUsuario(usuario);
         String rol = usuarioDAO.obtenerRol(nombre);
-        
+        System.out.println("Logueado: " + logueado + " Rol: " + rol);
         if(logueado && rol.length() > 0){
           
             // Crear sesion  

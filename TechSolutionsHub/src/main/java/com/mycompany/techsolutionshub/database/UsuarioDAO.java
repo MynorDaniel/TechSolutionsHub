@@ -25,40 +25,46 @@ public class UsuarioDAO {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             Encriptacion enc = new Encriptacion();
-            
+
             preparedStatement.setString(1, usuario.getNombre());
             preparedStatement.setString(2, enc.encriptar(usuario.getClave()));
-            
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                int count = rs.getInt(1);
-                return count > 0;
+
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                if (rs.next()) {
+                    int count = rs.getInt(1);
+                    return count > 0;
+                }
             }
-            
+
         } catch (SQLException e) {
+            System.out.println("Error al loguear usuario: " + e.getMessage());
             return false;
         }
         return false;
     }
 
+
     public String obtenerRol(String nombre) {
         String sql = "SELECT rol FROM usuario WHERE nombre = ?";
+        String rol = "";
 
         try (Connection connection = ConexionDB.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, nombre);
 
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                return rs.getString("rol");
+            try (ResultSet rs = preparedStatement.executeQuery()) {
+                if (rs.next()) {
+                    rol = rs.getString("rol");
+                }
             }
 
         } catch (SQLException e) {
-            return "";
         }
-        return "";
+
+        return rol;
     }
+
 
     public boolean crearUsuario(Usuario usuario) {
         String sql = "INSERT INTO usuario (nombre, clave, estado, rol) VALUES (?, ?, ?, ?)";

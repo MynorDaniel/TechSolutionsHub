@@ -4,9 +4,41 @@
         <servlet-name>UsuarioServlet</servlet-name>
         <servlet-class>com.mycompany.techsolutionshub.resources.UsuarioServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ComponenteServlet</servlet-name>
+        <servlet-class>com.mycompany.techsolutionshub.resources.ComponenteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MoldeServlet</servlet-name>
+        <servlet-class>com.mycompany.techsolutionshub.resources.MoldeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ComputadoraServlet</servlet-name>
+        <servlet-class>com.mycompany.techsolutionshub.resources.ComputadoraServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ClienteServlet</servlet-name>
+        <servlet-class>com.mycompany.techsolutionshub.resources.ClienteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
         <url-pattern>/UsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComponenteServlet</servlet-name>
+        <url-pattern>/ComponenteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MoldeServlet</servlet-name>
+        <url-pattern>/MoldeServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ComputadoraServlet</servlet-name>
+        <url-pattern>/ComputadoraServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteServlet</servlet-name>
+        <url-pattern>/ClienteServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

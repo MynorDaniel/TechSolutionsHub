@@ -12,24 +12,24 @@ CREATE TABLE usuario (
 
 -- Tabla Componente
 CREATE TABLE componente (
-    nombre VARCHAR(100) PRIMARY KEY,
-    cantidad INT NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
     costo DECIMAL(10,2) NOT NULL
 );
 
 -- Tabla Molde
 CREATE TABLE molde (
     nombre VARCHAR(100) PRIMARY KEY,
-    costo DECIMAL(10,2) NOT NULL
+    costo DECIMAL(10,2)
 );
 
 -- Tabla Molde-Componente (Relación)
 CREATE TABLE molde_componente (
     molde VARCHAR(100),
-    componente VARCHAR(100),
+    componente INT,
     PRIMARY KEY (molde, componente),
     FOREIGN KEY (molde) REFERENCES molde(nombre),
-    FOREIGN KEY (componente) REFERENCES componente(nombre)
+    FOREIGN KEY (componente) REFERENCES componente(id)
 );
 
 -- Tabla Cliente
