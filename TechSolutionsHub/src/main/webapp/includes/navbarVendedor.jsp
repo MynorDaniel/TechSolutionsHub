@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navVendedor">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/ClienteServlet"><i class="bi bi-people"></i> Clientes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/vendedor/ventas.jsp"><i class="bi bi-cash"></i> Ventas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/VentaServlet.jsp"><i class="bi bi-cash"></i> Ventas</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/vendedor/computadoras.jsp"><i class="bi bi-pc-display"></i> Computadoras</a></li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/LoginServlet">

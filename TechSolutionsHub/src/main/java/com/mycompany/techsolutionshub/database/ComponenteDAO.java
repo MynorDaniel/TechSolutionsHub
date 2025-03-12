@@ -19,7 +19,7 @@ public class ComponenteDAO {
 
     public ArrayList<Componente> obtenerComponentes() {
         ArrayList<Componente> componentes = new ArrayList<>();
-        String sql = "SELECT * FROM componente";
+        String sql = "SELECT * FROM componente WHERE estado = 'Disponible'";
         
         try (Connection connection = ConexionDB.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -40,13 +40,14 @@ public class ComponenteDAO {
     }
 
     public boolean crearComponente(Componente componente) {
-        String sql = "INSERT INTO componente (nombre, costo) VALUES (?, ?)";
+        String sql = "INSERT INTO componente (nombre, costo, estado) VALUES (?, ?, ?)";
 
         try (Connection conn = ConexionDB.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, componente.getNombre());
             stmt.setDouble(2, componente.getCosto());
+            stmt.setString(3, "Disponible");
 
             int filasAfectadas = stmt.executeUpdate();
             
@@ -58,7 +59,7 @@ public class ComponenteDAO {
     }
 
     public boolean eliminarComponente(int id) {
-        String sql = "DELETE FROM componente WHERE id = ?";
+        String sql = "UPDATE componente SET estado = 'Usado' WHERE id = ?";
 
         try (Connection conn = ConexionDB.getInstance().getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -68,7 +69,7 @@ public class ComponenteDAO {
 
             return filasAfectadas > 0;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error al actualizar el estado del componente: " + e.getMessage());
             return false;
         }
     }

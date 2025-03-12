@@ -20,6 +20,10 @@
         <servlet-name>ClienteServlet</servlet-name>
         <servlet-class>com.mycompany.techsolutionshub.resources.ClienteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>VentaServlet</servlet-name>
+        <servlet-class>com.mycompany.techsolutionshub.resources.VentaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UsuarioServlet</servlet-name>
         <url-pattern>/UsuarioServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
         <url-pattern>/ClienteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VentaServlet</servlet-name>
+        <url-pattern>/VentaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

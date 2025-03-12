@@ -35,9 +35,9 @@ public class ComponenteController {
            request.getRequestDispatcher("/ensamblador/componentes.jsp").forward(request, response); 
         }else if(action.equals("crearMolde")){
             request.getRequestDispatcher("/ensamblador/crearMolde.jsp").forward(request, response);
+        }else{
+            request.getRequestDispatcher("/ensamblador/componentes.jsp").forward(request, response);
         }
-        
-        
     }
 
     public void crearComponente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -98,7 +98,7 @@ public class ComponenteController {
         if(eliminado){
             request.setAttribute("mensajeAlerta", "Componente eliminado");
         }else{
-            request.setAttribute("mensajeAlerta", "Error al eliminar el componente");
+            request.setAttribute("mensajeAlerta", "Error al eliminar el componente, verifica que no este siendo usado en un molde");
         }
         
         obtenerComponentes(request, response);

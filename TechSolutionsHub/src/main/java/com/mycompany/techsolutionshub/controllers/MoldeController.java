@@ -30,8 +30,10 @@ public class MoldeController {
         
         if(action == null || action.equals("")){
            request.getRequestDispatcher("/ensamblador/moldes.jsp").forward(request, response);
-        }else if(action.equals("create")){
+        }else if(action.equals("crearComputadora")){
             request.getRequestDispatcher("/ensamblador/crearComputadora.jsp").forward(request, response);
+        }else{
+            request.getRequestDispatcher("/ensamblador/moldes.jsp").forward(request, response);
         }
     }
 

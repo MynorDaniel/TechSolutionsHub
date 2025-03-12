@@ -14,7 +14,8 @@ CREATE TABLE usuario (
 CREATE TABLE componente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100),
-    costo DECIMAL(10,2) NOT NULL
+    costo DECIMAL(10,2) NOT NULL,
+    estado VARCHAR(100)
 );
 
 -- Tabla Molde

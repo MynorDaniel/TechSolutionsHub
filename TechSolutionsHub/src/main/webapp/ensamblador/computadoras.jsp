@@ -38,7 +38,7 @@
 
                 <!-- Botón Ensamblar Computadora -->
                 <form action="MoldeServlet" method="get" class="d-inline">
-                    <input type="hidden" name="_method" value="create">
+                    <input type="hidden" name="_method" value="crearComputadora">
                     <button type="submit" class="btn btn-success"><i class="bi bi-plus-lg"></i>Ensamblar Computadora</button>
                 </form>  
 
