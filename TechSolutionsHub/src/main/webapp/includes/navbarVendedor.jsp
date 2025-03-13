@@ -10,6 +10,12 @@
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/ClienteServlet"><i class="bi bi-people"></i> Clientes</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/VentaServlet"><i class="bi bi-cash"></i> Ventas</a></li>
                     <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/ReporteServlet?&_method=ventas">
+                            <i class="bi bi-file-earmark-bar-graph"></i> Reportes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/LoginServlet">
                             <i class="bi bi-box-arrow-right"></i> Salir
                         </a>

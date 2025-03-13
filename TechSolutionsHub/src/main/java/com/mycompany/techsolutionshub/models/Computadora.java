@@ -19,6 +19,7 @@ public class Computadora {
     private LocalDate fechaEnsamble;
     private LocalDate fechaVenta;
     private String usuario;
+    private String vendedor;
 
     public Computadora(int id, String cliente, double precioVenta, String molde, String estado, LocalDate fechaEnsamble, LocalDate fechaVenta, String usuario) {
         this.id = id;
@@ -56,6 +57,22 @@ public class Computadora {
     }
 
     
+    public Computadora(double precioVenta, String molde, String estado, LocalDate fechaEnsamble, String usuario, String vendedor) {
+        this.precioVenta = precioVenta;
+        this.molde = molde;
+        this.estado = estado;
+        this.fechaEnsamble = fechaEnsamble;
+        this.usuario = usuario;
+        this.vendedor = vendedor;
+    }
+
+    public String getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
+    }
     
     
 

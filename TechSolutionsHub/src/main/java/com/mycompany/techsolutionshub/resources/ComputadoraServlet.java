@@ -44,6 +44,9 @@ public class ComputadoraServlet extends HttpServlet {
                 case "delete":
                     comp.eliminarComputadora(request, response);
                     break;
+                case "devolver":
+                    comp.devolverComputadora(request, response);
+                    break;
                 default:
                     request.setAttribute("mensajeAtributo", "Error");
                     comp.obtenerComputadoras(request, response);

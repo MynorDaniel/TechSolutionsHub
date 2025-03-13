@@ -12,7 +12,6 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  *
@@ -63,12 +62,12 @@ public class VentaDAO {
         return ventas;
     }
 
-    public Factura crearVenta(String nitCliente, String[] computadorasSeleccionadas) {
+    public Factura crearVenta(String nitCliente, String[] computadorasSeleccionadas, String vendedor) {
         if (computadorasSeleccionadas == null || computadorasSeleccionadas.length == 0) {
             return null;
         }
 
-        String sqlComputadora = "UPDATE computadora SET cliente = ?, estado = 'Vendida', fecha_venta = NOW() WHERE id = ?";
+        String sqlComputadora = "UPDATE computadora SET cliente = ?, estado = 'Vendida', fecha_venta = NOW(), vendedor = ? WHERE id = ?";
         String sqlFactura = "INSERT INTO factura (cliente, computadoras) VALUES (?, ?)";
         String sqlObtenerComputadoras = "SELECT id, molde, precio_venta FROM computadora WHERE id = ?";
 
@@ -80,7 +79,8 @@ public class VentaDAO {
             // Actualizar computadoras vendidas
             for (String idComputadora : computadorasSeleccionadas) {
                 stmtComputadora.setString(1, nitCliente);
-                stmtComputadora.setInt(2, Integer.parseInt(idComputadora));
+                stmtComputadora.setString(2, vendedor);
+                stmtComputadora.setInt(3, Integer.parseInt(idComputadora));
                 stmtComputadora.addBatch();
             }
 
@@ -118,6 +118,7 @@ public class VentaDAO {
             return null;
         }
     }
+
 
     public ArrayList<Venta> obtenerVentas() {
         String sql = "SELECT c.id, c.cliente, c.precio_venta, c.molde, c.fecha_venta, cl.nit, cl.nombre " +

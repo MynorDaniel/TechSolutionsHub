@@ -14,6 +14,7 @@ import com.mycompany.techsolutionshub.models.Venta;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -40,11 +41,14 @@ public class VentaController {
     }
 
     public void crearVenta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession sesion = request.getSession(false);
+        String vendedor = (String) sesion.getAttribute("nombreAtributoSesion");
+        
         String nitCliente = request.getParameter("cliente");
         String[] computadorasSeleccionadas = request.getParameterValues("computadoras");
         
         VentaDAO ventaDAO = new VentaDAO();
-        Factura factura = ventaDAO.crearVenta(nitCliente, computadorasSeleccionadas);
+        Factura factura = ventaDAO.crearVenta(nitCliente, computadorasSeleccionadas, vendedor);
         
         if(factura == null){
             request.setAttribute("mensajeAlerta", "Error al registrar la venta");

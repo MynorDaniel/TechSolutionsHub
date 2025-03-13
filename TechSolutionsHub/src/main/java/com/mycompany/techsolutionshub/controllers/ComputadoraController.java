@@ -67,5 +67,24 @@ public class ComputadoraController {
         
         obtenerComputadoras(request, response);
     }
+
+    public void devolverComputadora(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String computadoraId = request.getParameter("computadoraId");
+        
+        HttpSession sesion = request.getSession(false);
+        String vendedor = (String) sesion.getAttribute("nombreAtributoSesion");
+        
+        ComputadoraDAO compDAO = new ComputadoraDAO();
+        boolean devuelta = compDAO.devolverComputadora(computadoraId, vendedor);
+        
+        if(devuelta){
+            request.setAttribute("mensajeAlerta", "Computadora devuelta");
+        }else{
+            request.setAttribute("mensajeAlerta", "Error");
+        }
+        
+        VentaController venta = new VentaController();
+        venta.obtenerVentasDelDia(request, response);
+    }
     
 }

@@ -86,6 +86,7 @@
                         <th>Computadora ID</th>
                         <th>Precio Venta</th>
                         <th>Fecha Venta</th>
+                        <th>Devolución</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -100,6 +101,15 @@
                         <td><%= pc.getId() %></td>
                         <td>Q<%= pc.getPrecioVenta() %></td>
                         <td><%= pc.getFechaVenta() %></td>
+                        <td>
+                            <!-- Formulario de devolución -->
+                            <form action="ComputadoraServlet" method="post">
+                                <input type="hidden" name="_method" value="devolver">
+                                <input type="hidden" name="nit" value="<%= cliente.getNit() %>">
+                                <input type="hidden" name="computadoraId" value="<%= pc.getId() %>">
+                                <button type="submit" class="btn btn-warning btn-sm">Devolver</button>
+                            </form>
+                        </td>
                     </tr>
                     <% 
                                 }
@@ -107,12 +117,13 @@
                         } else {
                     %>
                     <tr>
-                        <td colspan="4" class="text-center">No hay ventas registradas.</td>
+                        <td colspan="5" class="text-center">No hay ventas registradas.</td>
                     </tr>
                     <% } %>
                 </tbody>
             </table>
         </div>
+
 
     </body>
 </html>

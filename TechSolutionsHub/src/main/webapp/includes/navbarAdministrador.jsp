@@ -9,8 +9,13 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/usuarios.jsp"><i class="bi bi-person-lines-fill"></i> Usuarios</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/computadoras.jsp"><i class="bi bi-pc"></i> Computadoras</a></li>
-                    <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/reportes.jsp"><i class="bi bi-bar-chart"></i> Reportes</a></li>
                     <li class="nav-item"><a class="nav-link" href="${pageContext.servletContext.contextPath}/administrador/carga-datos.jsp"><i class="bi bi-cloud-upload"></i> Carga de Datos</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/ReporteServlet?&_method=admin">
+                            <i class="bi bi-file-earmark-bar-graph"></i> Reportes
+                        </a>
+                    </li>
+
                     <!-- Boton Logout -->
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/LoginServlet">
