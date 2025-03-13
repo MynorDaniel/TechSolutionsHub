@@ -49,6 +49,16 @@ public class Computadora {
         this.usuario = usuario;
     }
 
+    public Computadora(int id, String molde, double precioVenta) {
+        this.id = id;
+        this.precioVenta = precioVenta;
+        this.molde = molde;
+    }
+
+    
+    
+    
+
     public int getId() {
         return id;
     }

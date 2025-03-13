@@ -19,6 +19,11 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+    public Cliente(String nit, String nombre) {
+        this.nit = nit;
+        this.nombre = nombre;
+    }
+
     public String getNit() {
         return nit;
     }
